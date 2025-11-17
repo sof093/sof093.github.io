@@ -1,24 +1,28 @@
 ---
 import '../styles/global.css';
+import NavBar from '../components/atoms/NavBar.astro';
+import Footer from '../components/atoms/Footer.astro';
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sofia | portafolio</title>
-	</head>
-	<body>
-		<div class="w-full min-h-screen">
-			<slot />
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Sofía | Portafolio</title>
+</head>
+<body>
 
-		</div>
-	</body>
+  <NavBar />
+
+  <main class="min-h-screen pt-20">
+    <slot />
+  </main>
+
+  <Footer />
+
+</body>
 </html>
-
 <style>
 	html,
 	body {

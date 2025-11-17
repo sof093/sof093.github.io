@@ -1,0 +1,99 @@
+
+<nav class="navbar">
+  <div class="contenedor-navbar">
+    <h1 class="logo">Sofía</h1>
+
+    <ol class="menu">
+      <li><a href="/" class="link">Index</a></li>
+      <li><a href="inicio" class="link">Inicio</a></li>
+      <li><a href="/habilidades" class="link">Habilidades</a></li>
+    
+      <li><a href="/proyectos" class="link">Proyectos</a></li>
+      <li><a href="/contacto" class="link">Contacto</a></li>
+    </ol>
+  </div>
+</nav>
+
+<style>
+  :root {
+    --lavanda-claro: #E8DCF4;
+    --lavanda-medio: #DBD1E9;
+    --lavanda-profundo: #989BBE;
+    --lavanda-gris: #CDC6E1;
+    --azul-suave: #AED7ED;
+    --azul-oscuro: #3681AB;
+    --texto-oscuro: #2F2F3A;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(232, 220, 244, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(152, 155, 190, 0.2);
+    z-index: 50;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contenedor-navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    letter-spacing: 0.5px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .link {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--azul-oscuro);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .link:hover {
+    color: var(--azul-oscuro);
+  }
+
+  .link:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      gap: 1.2rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+    }
+  }
+</style>
