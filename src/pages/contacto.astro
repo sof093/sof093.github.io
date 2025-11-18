@@ -2,35 +2,51 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
-  <section id="contacto" class="contacto-seccion">
+  <section class="contenido-principal">
     <div class="contacto-contenedor">
       <h2 class="contacto-titulo">Contáctame</h2>
 
-      <form class="contacto-formulario">
-        <input type="text" placeholder="Nombre" required />
-        <input type="email" placeholder="Correo electrónico" required />
-        <textarea placeholder="Mensaje" rows="4" required></textarea>
+      <form 
+        class="contacto-formulario"
+        action="https://formsubmit.co/sofiag0029@gmail.com"
+        method="POST"
+        id="formulario-contacto"
+      >
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="email" name="correo" placeholder="Correo electrónico" required />
+        <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+
+        <!-- FormSubmit Configuraciones -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
 
         <button type="submit">Enviar mensaje</button>
       </form>
+
+      <div id="mensaje-exito" class="alerta-exito">
+        ¡Tu mensaje ha sido enviado correctamente! 💜
+      </div>
     </div>
   </section>
 
   <style>
-    
-    /* Fondo suave sin líneas blancas */
-    .contacto-seccion {
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #E8DCF4;
+    }
+
+    .contenido-principal {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 6rem 1.5rem;
-      background: linear-gradient(180deg, #989BBE -10%, #E8DCF4 100%);
+      background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
     }
 
-    /* Tarjeta */
     .contacto-contenedor {
-      background: #F7F2FF; /* más suave y acorde a tus tarjetas */
+      background: #F7F2FF;
       padding: 3rem 2.5rem;
       border-radius: 1.5rem;
       max-width: 520px;
@@ -45,7 +61,6 @@ import Layout from '../layouts/Layout.astro';
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Título */
     .contacto-titulo {
       font-family: "Playfair Display", serif;
       font-size: 2.6rem;
@@ -53,7 +68,6 @@ import Layout from '../layouts/Layout.astro';
       color: #4B2E83;
     }
 
-    /* Formulario */
     .contacto-formulario {
       display: flex;
       flex-direction: column;
@@ -72,7 +86,6 @@ import Layout from '../layouts/Layout.astro';
       transition: all 0.25s ease;
     }
 
-    /* Efecto focus */
     .contacto-formulario input:focus,
     .contacto-formulario textarea:focus {
       border-color: #6C4FA3;
@@ -81,7 +94,6 @@ import Layout from '../layouts/Layout.astro';
       background: #fff;
     }
 
-    /* Botón */
     .contacto-formulario button {
       padding: 1rem;
       background: #6C4FA3;
@@ -89,7 +101,6 @@ import Layout from '../layouts/Layout.astro';
       border: none;
       border-radius: 0.8rem;
       font-size: 1.1rem;
-      font-family: 'Poppins', sans-serif;
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
     }
@@ -102,5 +113,23 @@ import Layout from '../layouts/Layout.astro';
     .contacto-formulario button:active {
       transform: translateY(0);
     }
+
+    .alerta-exito {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #6C4FA3;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+    }
   </style>
 </Layout>
+
+<!-- ⭐ Carga de JS del cliente (correcto en Astro) -->
+<script src="/scripts/contacto.js" client:load></script>
