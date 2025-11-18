@@ -1,1 +1,355 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark .overlay {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.dark .hero {
+    background: linear-gradient(180deg, #0f0f12, #1a1a22);
+}
+
+.dark .contenido.tarjeta {
+    background: rgba(30, 30, 35, 0.65);
+    color: #f3f3f3;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.dark .nombre,
+.dark .rol,
+.dark .intro {
+    color: #420251;
+}
+
+.theme-toggle {
+    --w: 52px;
+    --h: 28px;
+    width: var(--w);
+    height: var(--h);
+    padding: 4px;
+    border-radius: 9999px;
+    background: #dcdcdc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background 0.25s ease;
+}
+
+.theme-toggle .knob {
+    width: calc(var(--h) - 6px);
+    height: calc(var(--h) - 6px);
+    border-radius: 9999px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.30s cubic-bezier(.25, .8, .25, 1);
+}
+
+.theme-toggle[data-theme="dark"] .knob {
+    transform: translateX(calc(var(--w) - var(--h)));
+}
+
+#theme-icon {
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+}
+
+.theme-toggle[data-theme="dark"] {
+    background: #252525;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #d0c3e4;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(152, 155, 190, 0.2);
+    z-index: 50;
+    transition: background 0.36s ease, box-shadow 0.36s ease, color 0.36s ease;
+}
+
+.contenedor-navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #8d21f9;
+    transition: color .3s ease;
+}
+
+.logo:active,
+.logo:focus,
+.logo:hover {
+    color: #ffffff;
+}
+
+.menu .link {
+    color: var(--texto-oscuro, #151515);
+    transition: color 0.28s ease;
+}
+
+.menu .link:hover {
+    color: var(--lavanda-profundo, #989BBE);
+}
+
+.dark .navbar {
+    background: rgba(12, 10, 10, 0.55);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.dark .logo {
+    color: #c7b0ff;
+}
+
+.dark .logo:active,
+.dark .logo:focus,
+.dark .logo:hover {
+    color: #E8DCF4;
+}
+
+.dark .menu .link {
+    color: #d7d7d7;
+}
+
+.dark .menu .link:hover {
+    color: #fff;
+}
+
+.dark .theme-toggle {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+footer {
+    transition: background 0.36s ease, color 0.36s ease, box-shadow 0.36s ease;
+    background: rgba(20, 20, 20, 0.95);
+    color: #e6e6e6;
+}
+
+.dark footer {
+    background: rgba(17, 17, 20, 0.9);
+    background: rgba(232, 220, 244, 0.8);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.dark footer a:hover {
+    color: #fff;
+}
+
+.navbar img.icono {
+    filter: none;
+    transition: filter 0.28s ease;
+}
+
+.dark .navbar img.icono {
+    filter: brightness(1.2) saturate(0.7);
+}
+
+.dark .bg-gray-900 {
+    background-color: rgba(17, 17, 20, 0.95) !important;
+    color: #e6e6e6 !important;
+}
+
+footer {
+    margin-top: 0 !important;
+}
+
+svg {
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.dark body {
+    background: #121212;
+    color: #e8e8e8;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+    color: #d4c3ff;
+}
+
+.dark p {
+    color: #e8e8e8;
+}
+
+.dark .card,
+.dark .caja,
+.dark .contenedor,
+.dark .bloque {
+    background: #1e1b26 !important;
+    color: #f3e8ff !important;
+    border-color: #5a4a85 !important;
+}
+
+.dark button,
+.dark .btn {
+    background: #8d6be8 !important;
+    color: white !important;
+    border-color: transparent !important;
+}
+
+.dark button:hover,
+.dark .btn:hover {
+    background: #a78bfa !important;
+}
+
+.dark input,
+.dark textarea {
+    background: #1e1b26 !important;
+    border-color: #5a4a85 !important;
+    color: #f3e8ff !important;
+}
+
+.dark a {
+    color: #c7b0ff;
+}
+
+.dark a:hover {
+    color: white;
+}
+
+.dark .sombra,
+.dark .tarjeta,
+.dark .contenedor {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark .tarjeta-sobre-mi {
+    background: #1e1b26 !important;
+    color: #f3e8ff !important;
+}
+
+.dark .descripcion {
+    color: #e6ddff !important;
+}
+
+.dark .dato {
+    background: #2a2735 !important;
+    color: #f5eaff !important;
+    border-color: #5a4a85 !important;
+}
+
+.dark .icono {
+    color: #c8a8ff !important;
+}
+
+.dark .fondo-imagen {
+    background-color: #5a4a85 !important;
+}
+
+.dark .contenido-principal {
+    background: linear-gradient(180deg, #0f0f12 0%, #1a1a22 100%);
+}
+
+.dark .tarjeta-sobre-mi {
+    background: rgba(30, 30, 35, 0.75);
+    color: #f1eaff;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(150, 130, 200, 0.25);
+}
+
+.dark .fondo-imagen {
+    background-color: #5b4a81;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.dark .imagen-perfil {
+    border: 4px solid #6d5aa3;
+}
+
+.dark .titulo {
+    color: #d7c8ff;
+}
+
+.dark .descripcion {
+    color: #d6cdff;
+}
+
+.dark .linea-divisoria {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark .dato {
+    background-color: rgba(45, 45, 55, 0.9);
+    color: #e8ddff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(100, 80, 140, 0.3);
+}
+
+.dark .dato .icono {
+    color: #b59bff;
+}
+
+.dark body {
+    background: #1a1a1a;
+}
+
+.dark .contenido-principal {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.dark .contacto-contenedor {
+    background: #232323;
+    color: #f2f2f2;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.dark .contacto-titulo {
+    color: #d8caff;
+}
+
+.dark .contacto-formulario input,
+.dark .contacto-formulario textarea {
+    background: #2f2f2f;
+    border: 2px solid #4a3a63;
+    color: #f5eaff;
+}
+
+.dark .contacto-formulario input::placeholder,
+.dark .contacto-formulario textarea::placeholder {
+    color: #b8a5d6;
+}
+
+.dark .contacto-formulario input:focus,
+.dark .contacto-formulario textarea:focus {
+    background: #373737;
+    border-color: #9a7fe8;
+    box-shadow: 0 0 8px rgba(154, 127, 232, 0.4);
+}
+
+.dark .contacto-formulario button {
+    background: #9a7fe8;
+    color: #1a1a1a;
+}
+
+.dark .contacto-formulario button:hover {
+    background: #bba2ff;
+}
+
+.dark .alerta-exito {
+    background: #9a7fe8;
+    color: #1a1a1a;
+}

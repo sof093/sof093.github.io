@@ -1,182 +1,231 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import pagos from "../assets/pagos.png"
-import lumina from "../assets/lumina.jpg"
-import mini from "../assets/mini.jpg"
+import Layout from "../layouts/Layout.astro";
+import pagos from "../assets/pagos.png";
+import lumina from "../assets/lumina.jpg";
+import mini from "../assets/mini.jpg";
 ---
 
 <Layout>
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-  rel="stylesheet"
-/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
   <section class="contenido-principal">
-<section class="proyectos">
-  <h2 class="titulo-seccion">Mis Proyectos</h2>
+    <section class="proyectos">
+      <h2 class="titulo-seccion">Mis Proyectos</h2>
 
-  <div class="grid-proyectos">
-    <!-- Proyecto 1 -->
-    <div class="proyecto">
-      <div class="imagen-wrapper">
-      <img src={lumina.src} alt="Aplicación para personas con discapacidad del habla" class="imagen-proyecto" />
+      <div class="grid-proyectos">
+        <div class="proyecto">
+          <div class="imagen-wrapper">
+            <img
+              src={lumina.src}
+              alt="Aplicación para personas con discapacidad del habla"
+              class="imagen-proyecto"
+            />
+          </div>
+          <h3 class="nombre-proyecto">
+            Aplicación para personas con discapacidad del habla
+          </h3>
+          <p class="descripcion-proyecto">
+            Proyecto orientado a facilitar la comunicación de personas con
+            discapacidad del habla. Incluye interfaz amigable y tecnologías web
+            para mejorar la accesibilidad.
+          </p>
+          <a
+            href="https://github.com/sof093/Aplicacion-para-personas-con-discapacidad-del-habla"
+            target="_blank"
+            class="btn-proyecto"
+          >
+            Ver proyecto en GitHub
+          </a>
+        </div>
+
+        <div class="proyecto">
+          <div class="imagen-wrapper">
+            <img
+              src={mini.src}
+              alt="MiniJuego en Pygame"
+              class="imagen-proyecto"
+            />
+          </div>
+          <h3 class="nombre-proyecto">Minijuego en Pygame</h3>
+          <p class="descripcion-proyecto">
+            Mini juego desarrollado en Python usando Pygame. Enfocado en la
+            práctica de lógica de programación, animaciones y control de
+            eventos.
+          </p>
+          <a
+            href="https://github.com/sof093/minijuego_pygame"
+            target="_blank"
+            class="btn-proyecto"
+          >
+            Ver proyecto en GitHub
+          </a>
+        </div>
+
+        <div class="proyecto">
+          <div class="imagen-wrapper">
+            <img
+              src={pagos.src}
+              alt="Prototipo de Transferencias"
+              class="imagen-proyecto"
+            />
+          </div>
+          <h3 class="nombre-proyecto">
+            Prototipo de transferencias con Open Pyments
+          </h3>
+          <p class="descripcion-proyecto">
+            Prototipo de sistema para gestionar transferencias, diseñado con
+            enfoque en UX/UI y procesos de automatización para mejorar la
+            experiencia del usuario.
+          </p>
+          <a
+            href="https://github.com/sof093/Prototipo_tranferencias"
+            target="_blank"
+            class="btn-proyecto"
+          >
+            Ver proyecto en GitHub
+          </a>
+        </div>
       </div>
-      <h3 class="nombre-proyecto">Aplicación para personas con discapacidad del habla</h3>
-      <p class="descripcion-proyecto">
-        Proyecto orientado a facilitar la comunicación de personas con discapacidad del habla. Incluye interfaz amigable y tecnologías web para mejorar la accesibilidad.
-      </p>
-      <a href="https://github.com/sof093/Aplicacion-para-personas-con-discapacidad-del-habla" target="_blank" class="btn-proyecto">
-        Ver proyecto en GitHub
-      </a>
-    </div>
-
-    <!-- Proyecto 2 -->
-    <div class="proyecto">
-      <div class="imagen-wrapper">
-      <img src={mini.src} alt="MiniJuego en Pygame" class="imagen-proyecto" />
-      </div>
-      <h3 class="nombre-proyecto">Minijuego en Pygame</h3>
-      <p class="descripcion-proyecto">
-        Mini juego desarrollado en Python usando Pygame. Enfocado en la práctica de lógica de programación, animaciones y control de eventos.
-      </p>
-      <a href="https://github.com/sof093/minijuego_pygame" target="_blank" class="btn-proyecto">
-        Ver proyecto en GitHub
-      </a>
-    </div>
-
-    <!-- Proyecto 3 -->
-    <div class="proyecto">
-      <div class="imagen-wrapper">
-      <img src={pagos.src} alt="Prototipo de Transferencias" class="imagen-proyecto" />
-      </div>
-      <h3 class="nombre-proyecto">Prototipo de transferencias con Open Pyments</h3>
-      <p class="descripcion-proyecto">
-        Prototipo de sistema para gestionar transferencias, diseñado con enfoque en UX/UI y procesos de automatización para mejorar la experiencia del usuario.
-      </p>
-      <a href="https://github.com/sof093/Prototipo_tranferencias" target="_blank" class="btn-proyecto">
-        Ver proyecto en GitHub
-      </a>
-    </div>
-  </div>
-</section>
-
-
+    </section>
   </section>
-
 </Layout>
 
-
 <style>
-  /* 🎨 Fondo general como en Sobre mí */
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #e8dcf4;
+  }
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #E8DCF4; /* color base, no se verá la línea */
-}
+  :global(.dark) body {
+    background: #1a1a1a !important;
+  }
 
-.contenido-principal {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 1.5rem;
-  background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
-}
-.proyectos {
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #E8DCF4 0%, #DBD1E9 100%);
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
+  .contenido-principal {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
+  }
 
-.titulo-seccion {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #4B2E83;
-}
+  :global(.dark) .contenido-principal {
+    background: linear-gradient(180deg, #1f1f2e 0%, #262637 100%);
+  }
 
-.grid-proyectos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-}
+  .proyectos {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, #e8dcf4 0%, #dbd1e9 100%);
+  }
 
-.proyecto {
-  background-color: #DBD1E9;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  :global(.dark) .proyectos {
+    background: linear-gradient(180deg, #232233 0%, #2e2d44 100%);
+  }
 
-  /* 🔥 NUEVO */
-  display: flex;
-  flex-direction: column;
-}
-.btn-proyecto {
-  margin-top: auto; /* 🔥 hace que el botón se pegue al fondo */
-}
+  .titulo-seccion {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #4b2e83;
+  }
 
+  :global(.dark) .titulo-seccion {
+    color: #d8c8ff;
+  }
 
-/* CONTENEDOR de la imagen */
-.imagen-wrapper {
-  width: 100%;
-  height: 300px; /* tamaño uniforme para TODAS */
-  border-radius: 0.8rem;
-  overflow: hidden; /* para evitar bordes raros */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #e2d8ef; /* color suave para que combine */
-}
+  .grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
 
-/* IMAGEN dentro del contenedor */
-.imagen-proyecto {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* se muestra COMPLETA */
-}
+  .proyecto {
+    background-color: #dbd1e9;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
 
+  :global(.dark) .proyecto {
+    background-color: #2a2740;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.06);
+  }
 
+  .imagen-wrapper {
+    width: 100%;
+    height: 300px;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e2d8ef;
+  }
 
-.proyecto:hover .imagen-proyecto {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
+  :global(.dark) .imagen-wrapper {
+    background: #3b3657;
+  }
 
+  .imagen-proyecto {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 
+  .nombre-proyecto {
+    font-family: "Lora", serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #2f2f3a;
+  }
 
-.nombre-proyecto {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: #2F2F3A;
-}
+  :global(.dark) .nombre-proyecto {
+    color: #e6e2ff;
+  }
 
-.descripcion-proyecto {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #2c2c2c;
-  margin-bottom: 1rem;
-  text-align: justify;
-}
+  .descripcion-proyecto {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
 
-.btn-proyecto {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background-color: #6C4FA3;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.8rem;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
+  :global(.dark) .descripcion-proyecto {
+    color: #d6d6d6;
+  }
 
-.btn-proyecto:hover {
-  background-color: #58407c;
-}
+  .btn-proyecto {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background-color: #6c4fa3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin-top: auto;
+  }
 
+  .btn-proyecto:hover {
+    background-color: #58407c;
+  }
 
+  :global(.dark) .btn-proyecto {
+    background-color: #8b6fde;
+  }
+
+  :global(.dark) .btn-proyecto:hover {
+    background-color: #6b55b8;
+  }
 </style>
-  

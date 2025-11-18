@@ -24,8 +24,8 @@ import so from "../assets/so.jpg";
           semestre. Apasionada por la programación y la resolución de problemas,
           disfruto aprender nuevas tecnologías y explorar áreas como
           automatización y desarrollo web. Durante mi formación, he adquirido
-          habilidades y busco siempre aplicar mis
-          conocimientos en estos proyectos.
+          habilidades y busco siempre aplicar mis conocimientos en estos
+          proyectos.
         </p>
 
         <div class="linea-divisoria"></div>
@@ -44,7 +44,6 @@ import so from "../assets/so.jpg";
           </div>
           <div class="dato">
             <span class="material-icons-outlined icono">code</span> Desarrollo Web
-            
           </div>
         </div>
       </div>
@@ -60,34 +59,23 @@ import so from "../assets/so.jpg";
   href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
   rel="stylesheet"
 />
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-  rel="stylesheet"
-/>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #E8DCF4; /* color base, no se verá la línea */
-}
+  .contenido-principal {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
+  }
+  :global(.dark) .contenido-principal {
+    background: linear-gradient(180deg, #1f1f2e 0%, #262637 100%);
+  }
 
-.contenido-principal {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 1.5rem;
-  background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
-}
-
-
-
-  /* 💎 Tarjeta principal */
   .tarjeta-sobre-mi {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2rem;
     background-color: #dbd1e9;
     color: #1f1f1f;
@@ -97,13 +85,14 @@ body {
     max-width: 1000px;
     width: 100%;
   }
-
-  /* 📸 Imagen */
-  .contenedor-imagen {
-    position: relative;
-    flex-shrink: 0;
+  :global(.dark) .tarjeta-sobre-mi {
+    background-color: #2a2740;
+    color: #f0ebff;
   }
 
+  .contenedor-imagen {
+    position: relative;
+  }
   .fondo-imagen {
     position: absolute;
     width: 220px;
@@ -112,9 +101,10 @@ body {
     border-radius: 1.2rem;
     transform: rotate(-5deg);
     z-index: 0;
-    box-shadow: 0 8px 20px rgba(54, 129, 171, 0.3);
   }
-
+  :global(.dark) .fondo-imagen {
+    background-color: #4b4568;
+  }
   .imagen-perfil {
     position: relative;
     width: 200px;
@@ -124,74 +114,69 @@ body {
     border: 5px solid #cdc6e7;
     z-index: 1;
   }
-
-  /* 📝 Texto */
-  .texto-sobre-mi {
-    text-align: left;
-    color: #2c2c2c;
-    max-width: 600px;
+  :global(.dark) .imagen-perfil {
+    border-color: #6f66a8;
   }
 
+  .texto-sobre-mi {
+    max-width: 600px;
+  }
   .titulo {
     font-family: "Playfair Display", serif;
     color: #000c12;
     font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
   }
-
+  :global(.dark) .titulo {
+    color: #f4f0ff;
+  }
   .descripcion {
-    font-family: "Lora", serif;
+    font-size: 1.2rem;
     color: #2f2f3d;
-    font-size: 1.6rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
     text-align: justify;
   }
-
-  /* 🔹 Línea divisoria */
-  .linea-divisoria {
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 1.5rem 0;
+  :global(.dark) .descripcion {
+    color: #dcd7f9;
   }
 
-  /* 📘 Datos personales */
+  .linea-divisoria {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 1.5rem 0;
+  }
+  :global(.dark) .linea-divisoria {
+    border-top: 1px solid rgba(200, 200, 255, 0.2);
+  }
+
   .datos-personales {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
-    font-size: 0.95rem;
   }
 
   .dato {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     background-color: #dbd1e9;
     padding: 0.8rem 1rem;
     border-radius: 0.8rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  :global(.dark) .dato {
+    background-color: #3b3657;
   }
 
   .icono {
     color: #3681ab;
-    font-size: 1.2rem;
+  }
+  :global(.dark) .icono {
+    color: #a8caff;
   }
 
-  /* 🖥️ Pantallas grandes */
   @media (min-width: 768px) {
     .tarjeta-sobre-mi {
       flex-direction: row;
-      align-items: center;
       justify-content: space-between;
-    }
-
-    .contenedor-imagen {
-      margin-right: 2rem;
-    }
-
-    .texto-sobre-mi {
-      text-align: left;
+      align-items: center;
     }
   }
 </style>

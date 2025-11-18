@@ -1,155 +1,159 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import base from '../assets/base.png';
-import poo from '../assets/poo.png';
-import redes from '../assets/redes.png';
-import web from '../assets/web.png';
-import maquetado from '../assets/maquetado.png';
-import github from '../assets/github.png';
-import circuitos from '../assets/circuitos.png';
-import monitor from '../assets/monitor.png';
-
+import Layout from "../layouts/Layout.astro";
+import base from "../assets/base.png";
+import poo from "../assets/poo.png";
+import redes from "../assets/redes.png";
+import web from "../assets/web.png";
+import maquetado from "../assets/maquetado.png";
+import github from "../assets/github.png";
+import circuitos from "../assets/circuitos.png";
+import monitor from "../assets/monitor.png";
 ---
 
 <Layout>
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-  rel="stylesheet"
-/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
   <section class="contenido-principal">
-
     <div class="contenedor-habilidades">
-
       <h1 class="titulo">Habilidades Técnicas</h1>
       <p class="descripcion">
-        Un resumen de mis competencias técnicas clave desarrolladas a lo largo de mi formación académica.
+        Un resumen de mis competencias desarrolladas a lo largo de mi formación
+        académica.
       </p>
 
       <div class="grid-habilidades">
-
-        <!-- Card 1 -->
         <div class="card">
           <div class="icono-card bg1">
-            <img src={base.src} alt="Bases de datos">
+            <img src={base.src} alt="Bases de datos" />
           </div>
           <h3 class="titulo-card">Bases de datos</h3>
           <p class="texto-card">
-           Experiencia en el diseño y gestión de bases de datos relacionales, principalmente con MySQL, aplicando consultas y estructuras eficientes para el manejo de información.
+            Experiencia en el diseño y gestión de bases de datos relacionales,
+            principalmente con MySQL, aplicando consultas y estructuras
+            eficientes para el manejo de información.
           </p>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
           <div class="icono-card bg2">
-            <img src={web.src} alt="Desarrollo web">
+            <img src={web.src} alt="Desarrollo web" />
           </div>
           <h3 class="titulo-card">Desarrollo web</h3>
           <p class="texto-card">
-            Desarrollo de interfaces web utilizando HTML, CSS y JavaScript, asegurando una estructura clara, estilos consistentes y funcionalidad básica.
+            Desarrollo de interfaces web utilizando HTML, CSS y JavaScript,
+            asegurando una estructura clara, estilos consistentes y
+            funcionalidad básica.
           </p>
         </div>
 
-        <!-- Card 3 -->
         <div class="card">
           <div class="icono-card bg2">
-            <img src={poo.src} alt="Programación POO">
+            <img src={poo.src} alt="Programación POO" />
           </div>
           <h3 class="titulo-card">Programación POO</h3>
           <p class="texto-card">
-            Aplicación de principios de Programación Orientada a Objetos para la creación de sistemas estructurados y escalables.
+            Aplicación de principios de Programación Orientada a Objetos para la
+            creación de sistemas estructurados y escalables.
           </p>
         </div>
 
-        <!-- Card 4 -->
         <div class="card">
           <div class="icono-card bg1">
-            <img src={redes.src} alt="Redes y sistemas">
+            <img src={redes.src} alt="Redes y sistemas" />
           </div>
           <h3 class="titulo-card">Redes y sistemas</h3>
           <p class="texto-card">
-            Conocimientos fundamentales en configuración de redes, diagnóstico básico y mantenimiento de sistemas informáticos.
+            Conocimientos fundamentales en configuración de redes, diagnóstico
+            básico y mantenimiento de sistemas informáticos.
           </p>
         </div>
 
-        <!-- Diseño y Maquetación -->
-<div class="card">
-  <div class="icono-card bg2">
-    <img src={maquetado.src} alt="Diseño y maquetación">
-  </div>
-  <h3 class="titulo-card">Diseño y maquetación</h3>
-  <p class="texto-card">
-    Desarrollo de interfaces visuales y maquetaciones estéticas, aplicando paletas de colores pastel y diseños coherentes con estilo moderno.
-  </p>
-</div>
+        <div class="card">
+          <div class="icono-card bg2">
+            <img src={maquetado.src} alt="Diseño y maquetación" />
+          </div>
+          <h3 class="titulo-card">Diseño y maquetación</h3>
+          <p class="texto-card">
+            Desarrollo de interfaces visuales y maquetaciones estéticas,
+            aplicando paletas de colores pastel y diseños coherentes con estilo
+            moderno.
+          </p>
+        </div>
 
-<!-- Git y GitHub -->
-<div class="card">
-  <div class="icono-card bg1">
-    <img src={github.src} alt="Git y GitHub">
-  </div>
-  <h3 class="titulo-card">Control de versiones</h3>
-  <p class="texto-card">
-    Uso de Git y GitHub para la gestión de versiones, manejo de repositorios y control del flujo de trabajo en proyectos individuales.
-  </p>
-</div>
+        <div class="card">
+          <div class="icono-card bg1">
+            <img src={github.src} alt="Git y GitHub" />
+          </div>
+          <h3 class="titulo-card">Control de versiones</h3>
+          <p class="texto-card">
+            Uso de Git y GitHub para la gestión de versiones, manejo de
+            repositorios y control del flujo de trabajo en proyectos
+            individuales.
+          </p>
+        </div>
 
-<!-- Circuitos -->
-<div class="card">
-  <div class="icono-card bg1">
-    <img src={circuitos.src} alt="Circuitos eléctricos y electrónicos">
-  </div>
-  <h3 class="titulo-card">Circuitos eléctricos y electrónicos</h3>
-  <p class="texto-card">
-    Diseño y simulación de circuitos eléctricos y electrónicos, integrando sensores, componentes y prácticas enfocadas en funcionamiento real.
-     Implementación de sistemas automatizados a pequeña escala, integrando sensores para control de iluminación, humedad y simulaciones como bombeo de agua.
-  </p>
-</div>
-<!-- Arquitectura de computadoras -->
-<div class="card">
-  <div class="icono-card bg1">
-    <img src={monitor.src} alt="Arquitectura de computadoras">
-  </div>
-  <h3 class="titulo-card">Arquitectura de computadoras</h3>
-  <p class="texto-card">
-    Conocimientos sobre la estructura y funcionamiento interno del hardware, componentes esenciales y ciclos de procesamiento computacional.
-  </p>
-</div>
+        <div class="card">
+          <div class="icono-card bg1">
+            <img
+              src={circuitos.src}
+              alt="Circuitos eléctricos y electrónicos"
+            />
+          </div>
+          <h3 class="titulo-card">Circuitos eléctricos y electrónicos</h3>
+          <p class="texto-card">
+            Diseño y simulación de circuitos eléctricos y electrónicos,
+            integrando sensores, componentes y prácticas enfocadas en
+            funcionamiento real. Implementación de sistemas automatizados a
+            pequeña escala, integrando sensores para control de iluminación,
+            humedad y simulaciones como bombeo de agua.
+          </p>
+        </div>
 
-
-
-
-
-
+        <div class="card">
+          <div class="icono-card bg1">
+            <img src={monitor.src} alt="Arquitectura de computadoras" />
+          </div>
+          <h3 class="titulo-card">Arquitectura de computadoras</h3>
+          <p class="texto-card">
+            Conocimientos sobre la estructura y funcionamiento interno del
+            hardware, componentes esenciales y ciclos de procesamiento
+            computacional.
+          </p>
+        </div>
       </div>
-
     </div>
-
   </section>
-
 </Layout>
 
-
 <style>
-  /* 🎨 Fondo general como en Sobre mí */
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #e8dcf4;
+  }
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #E8DCF4; /* color base, no se verá la línea */
-}
+  :global(.dark) body {
+    background: #1a1a1a !important;
+  }
 
-.contenido-principal {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 1.5rem;
-  background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
-}
+  .contenido-principal {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
+  }
 
-  /* 🧩 Contenedor */
+  :global(.dark) .contenido-principal {
+    background: linear-gradient(180deg, #1f1f2e 0%, #262637 100%);
+  }
+
   .contenedor-habilidades {
-    background: #DBD1E9;
+    background: #dbd1e9;
     padding: 3rem;
     max-width: 1500px;
     width: 150%;
@@ -158,25 +162,35 @@ body {
     text-align: center;
   }
 
-  /* 🔹 Títulos */
+  :global(.dark) .contenedor-habilidades {
+    background: #2a2740;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.08);
+  }
+
   .titulo {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     color: #000c12;
     font-size: 2.2rem;
     font-weight: 700;
   }
 
+  :global(.dark) .titulo {
+    color: #e6e2ff;
+  }
+
   .descripcion {
-    font-family: 'Lora', serif;
+    font-family: "Lora", serif;
     color: #2f2f3d;
     font-size: 1.6rem;
-   
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
 
-  /* 🟪 Grid */
+  :global(.dark) .descripcion {
+    color: #d8d4f9;
+  }
+
   .grid-habilidades {
     margin-top: 3rem;
     display: grid;
@@ -184,38 +198,54 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
-  /* 💎 Card */
   .card {
-    background: #E8DCF4;
+    background: #e8dcf4;
     padding: 2rem;
     border-radius: 1.2rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+
+  :global(.dark) .card {
+    background: #3b3657;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.07);
   }
 
   .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  :global(.dark) .card:hover {
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
   }
 
   .titulo-card {
-    
-    font-family: 'Lora', serif;
+    font-family: "Lora", serif;
     text-align: center;
     font-size: 1.3rem;
     margin-top: 1rem;
     color: #000c12;
   }
 
+  :global(.dark) .titulo-card {
+    color: #f0ebff;
+  }
+
   .texto-card {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     text-align: justify;
     margin-top: 0.7rem;
     color: #2f2f3d;
     font-size: 0.95rem;
   }
 
-  /* 🟣 Icono */
+  :global(.dark) .texto-card {
+    color: #d4d1e6;
+  }
+
   .icono-card {
     width: 70px;
     height: 70px;
@@ -224,13 +254,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .5rem;
+    padding: 0.5rem;
+    background: #e2d8ef;
+  }
+
+  :global(.dark) .icono-card {
+    background: #4a4568;
   }
 
   .icono-card img {
     width: 40px;
   }
-
 
   @media (min-width: 768px) {
     .contenedor-habilidades {

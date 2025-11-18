@@ -1,24 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout>
   <section class="contenido-principal">
     <div class="contacto-contenedor">
       <h2 class="contacto-titulo">Contáctame</h2>
 
-      <form 
+      <form
         class="contacto-formulario"
         action="https://formsubmit.co/sofiag0029@gmail.com"
         method="POST"
         id="formulario-contacto"
       >
         <input type="text" name="nombre" placeholder="Nombre" required />
-        <input type="email" name="correo" placeholder="Correo electrónico" required />
-        <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+        <input
+          type="email"
+          name="correo"
+          placeholder="Correo electrónico"
+          required
+        />
+        <textarea name="mensaje" placeholder="Mensaje" rows="4" required
+        ></textarea>
 
-        <!-- FormSubmit Configuraciones -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
+        <input type="hidden" name="_captcha" value="false" />
+        <input
+          type="hidden"
+          name="_subject"
+          value="Nuevo mensaje desde tu portafolio"
+        />
 
         <button type="submit">Enviar mensaje</button>
       </form>
@@ -32,8 +42,8 @@ import Layout from '../layouts/Layout.astro';
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #E8DCF4;
+      font-family: "Poppins", sans-serif;
+      background: #e8dcf4;
     }
 
     .contenido-principal {
@@ -42,30 +52,36 @@ import Layout from '../layouts/Layout.astro';
       justify-content: center;
       align-items: center;
       padding: 6rem 1.5rem;
-      background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
+      background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
     }
 
     .contacto-contenedor {
-      background: #F7F2FF;
+      background: #f7f2ff;
       padding: 3rem 2.5rem;
       border-radius: 1.5rem;
       max-width: 520px;
       width: 100%;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
       text-align: center;
-      animation: aparecer .6s ease;
+      animation: aparecer 0.6s ease;
     }
 
     @keyframes aparecer {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .contacto-titulo {
       font-family: "Playfair Display", serif;
       font-size: 2.6rem;
       margin-bottom: 2rem;
-      color: #4B2E83;
+      color: #4b2e83;
     }
 
     .contacto-formulario {
@@ -76,19 +92,19 @@ import Layout from '../layouts/Layout.astro';
 
     .contacto-formulario input,
     .contacto-formulario textarea {
-      width: 100%;
+      width: 90%;
       padding: 1rem 1.2rem;
       border: 2px solid #d7cceb;
       border-radius: 0.8rem;
       font-size: 1rem;
       background: #fdfbff;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       transition: all 0.25s ease;
     }
 
     .contacto-formulario input:focus,
     .contacto-formulario textarea:focus {
-      border-color: #6C4FA3;
+      border-color: #6c4fa3;
       box-shadow: 0 0 8px rgba(108, 79, 163, 0.4);
       outline: none;
       background: #fff;
@@ -96,13 +112,15 @@ import Layout from '../layouts/Layout.astro';
 
     .contacto-formulario button {
       padding: 1rem;
-      background: #6C4FA3;
+      background: #6c4fa3;
       color: #fff;
       border: none;
       border-radius: 0.8rem;
       font-size: 1.1rem;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition:
+        background 0.3s ease,
+        transform 0.2s ease;
     }
 
     .contacto-formulario button:hover {
@@ -118,18 +136,68 @@ import Layout from '../layouts/Layout.astro';
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #6C4FA3;
+      background: #6c4fa3;
       color: white;
       padding: 14px 22px;
       border-radius: 12px;
       font-size: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       opacity: 0;
-      transition: opacity .4s ease;
+      transition: opacity 0.4s ease;
       pointer-events: none;
+    }
+
+    :global(.dark) body {
+      background: #1a1a1a;
+    }
+
+    :global(.dark) .contenido-principal {
+      background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    }
+
+    :global(.dark) .contacto-contenedor {
+      background: #232323;
+      color: #f2f2f2;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    :global(.dark) .contacto-titulo {
+      color: #d8caff;
+    }
+
+    :global(.dark) .contacto-formulario input,
+    :global(.dark) .contacto-formulario textarea {
+      background: #2f2f2f;
+      border: 2px solid #4a3a63;
+      color: #f5eaff;
+    }
+
+    :global(.dark) .contacto-formulario input::placeholder,
+    :global(.dark) .contacto-formulario textarea::placeholder {
+      color: #b8a5d6;
+    }
+
+    :global(.dark) .contacto-formulario input:focus,
+    :global(.dark) .contacto-formulario textarea:focus {
+      background: #373737;
+      border-color: #9a7fe8;
+      box-shadow: 0 0 8px rgba(154, 127, 232, 0.4);
+    }
+
+    :global(.dark) .contacto-formulario button {
+      background: #9a7fe8;
+      color: #1a1a1a;
+    }
+
+    :global(.dark) .contacto-formulario button:hover {
+      background: #bba2ff;
+    }
+
+    :global(.dark) .alerta-exito {
+      background: #9a7fe8;
+      color: #1a1a1a;
     }
   </style>
 </Layout>
 
-<!-- ⭐ Carga de JS del cliente (correcto en Astro) -->
 <script src="/scripts/contacto.js" client:load></script>

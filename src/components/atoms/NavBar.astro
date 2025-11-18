@@ -1,49 +1,47 @@
 ---
-import home from '../../assets/home.png';
-
+import home from "../../assets/home.png";
+import moon from "../../assets/moon.png";
 ---
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
+  rel="stylesheet"
+/>
 
 <nav class="navbar">
   <div class="contenedor-navbar">
-
     <a href="/" class="logo-con-icono">
       <img src={home.src} alt="inicio" class="icono" />
       <h1 class="logo">Sofia</h1>
     </a>
 
-    <ol class="menu">
-      <li><a href="/inicio" class="link">Sobre mi</a></li>
-      <li><a href="/habilidades" class="link">Habilidades</a></li>
-      <li><a href="/proyectos" class="link">Proyectos</a></li>
-      <li><a href="/contacto" class="link">Contacto</a></li>
-    </ol>
+    <div class="menu-y-toggle">
+      <ol class="menu">
+        <li><a href="/inicio" class="link">Sobre mí</a></li>
+        <li><a href="/habilidades" class="link">Habilidades</a></li>
+        <li><a href="/proyectos" class="link">Proyectos</a></li>
+        <li><a href="/contacto" class="link">Contacto</a></li>
+      </ol>
 
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <div class="knob">
+          <img id="theme-icon" src={moon.src} alt="Icono del tema" />
+        </div>
+      </button>
+    </div>
   </div>
 </nav>
 
 <style>
   :root {
-    --lavanda-claro: #E8DCF4;
-    --lavanda-medio: #DBD1E9;
-    --lavanda-profundo: #989BBE;
-    --lavanda-gris: #CDC6E1;
+    --lavanda-claro: #e8dcf4;
+    --lavanda-medio: #dbd1e9;
+    --lavanda-profundo: #989bbe;
+    --lavanda-gris: #cdc6e1;
     --lavanda-claro: #8d21f9;
-  --lavanda-medio: #350479;
+    --lavanda-medio: #350479;
 
-    --texto-oscuro: #190222;
-  }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(232, 220, 244, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(152, 155, 190, 0.2);
-    z-index: 50;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    --texto-oscuro: #480366;
   }
 
   .contenedor-navbar {
@@ -55,23 +53,23 @@ import home from '../../assets/home.png';
     align-items: center;
   }
 
-  .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-neutral-950);
-    letter-spacing: 0.5px;
-  }
-
   .menu {
     display: flex;
     gap: 2rem;
     list-style: none;
   }
+  .menu-y-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
   .logo-con-icono {
     display: flex;
     align-items: center;
     gap: 0.4rem;
     text-decoration: none;
+    align-items: left;
   }
 
   .icono {
@@ -80,39 +78,35 @@ import home from '../../assets/home.png';
     display: block;
   }
 
-
-
-
   .link {
-  text-decoration: none;
-  color: var(--texto-oscuro); /* mantiene buen contraste sobre lavanda */
-  font-weight: 600; /* SemiBold para resaltar */
-  font-size: 1rem;
-  font-family: 'Montserrat', sans-serif; /* aquí aplicamos Montserrat */
-  position: relative;
-  transition: color 0.3s ease;
-}
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    transition: color 0.3s ease;
+  }
 
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--lavanda-claro);
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
+  .link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--lavanda-claro);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
 
-.link:hover {
-  color: var(--lavanda-medio);
-}
+  .link:hover {
+    color: var(--lavanda-medio);
+  }
 
-.link:hover::after {
-  width: 100%;
-}
-
+  .link:hover::after {
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     .menu {
