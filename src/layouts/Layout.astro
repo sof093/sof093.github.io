@@ -2,8 +2,7 @@
 import "../styles/global.css";
 import NavBar from "../components/atoms/NavBar.astro";
 import Footer from "../components/atoms/Footer.astro";
-import moon from "../assets/moon.png";
-import sun from "../assets/sun.png";
+
 ---
 
 <!doctype html>
@@ -22,30 +21,3 @@ import sun from "../assets/sun.png";
     </main>
 
     <Footer />
-<button id="theme-toggle" class="p-2 rounded">
-  <img id="theme-icon" src="/images/moon.png" alt="Icono moon" width="30px">
-</button>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("theme-toggle");
-    const icon = document.getElementById("theme-icon");
-
-    const moonIcon = "/images/moon.png";
-    const sunIcon = "/images/sun.png";
-
-    function applyTheme(dark) {
-      document.documentElement.classList.toggle("dark", dark);
-      icon.src = dark ? sunIcon : moonIcon;
-      localStorage.setItem("theme", dark ? "dark" : "light");
-    }
-
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(saved ? saved === "dark" : prefersDark);
-
-    toggle.addEventListener("click", () => {
-      applyTheme(!document.documentElement.classList.contains("dark"));
-    });
-  });
-</script>

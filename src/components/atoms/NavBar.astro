@@ -1,6 +1,7 @@
 ---
 import home from "../../assets/home.png";
 import moon from "../../assets/moon.png";
+import sun from "../../assets/sun.png";
 ---
 
 <link
@@ -17,6 +18,7 @@ import moon from "../../assets/moon.png";
 
     <div class="menu-y-toggle">
       <ol class="menu">
+        
         <li><a href="/inicio" class="link">Sobre mí</a></li>
         <li><a href="/habilidades" class="link">Habilidades</a></li>
         <li><a href="/proyectos" class="link">Proyectos</a></li>
@@ -25,15 +27,39 @@ import moon from "../../assets/moon.png";
 
       <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
         <div class="knob">
-          <img id="theme-icon" src="/moon.png" alt="tema">
-
+          <img id="theme-icon" src={moon.src} alt="tema">
         </div>
       </button>
     </div>
   </div>
 </nav>
 
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    const moonIcon = moon;
+    const sunIcon = sun;
+
+    function applyTheme(dark) {
+      document.documentElement.classList.toggle("dark", dark);
+      icon.src = dark ? sunIcon : moonIcon;
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    }
+
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(saved ? saved === "dark" : prefersDark);
+
+    toggle.addEventListener("click", () => {
+      applyTheme(!document.documentElement.classList.contains("dark"));
+    });
+  });
+</script>
 <style>
+
   :root {
     --lavanda-claro: #e8dcf4;
     --lavanda-medio: #dbd1e9;
@@ -118,3 +144,29 @@ import moon from "../../assets/moon.png";
     }
   }
 </style>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    // Pasamos las rutas importadas como strings desde Astro
+    const moonIcon = "{moon.src}".replace(/^{|}$/g, '');
+    const sunIcon = "{sun.src}".replace(/^{|}$/g, '');
+
+    function applyTheme(dark) {
+      document.documentElement.classList.toggle("dark", dark);
+      toggle.dataset.theme = dark ? "dark" : "light";
+      icon.src = dark ? sunIcon : moonIcon;
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    }
+
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(saved ? saved === "dark" : prefersDark);
+
+    toggle.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      applyTheme(!isDark);
+    });
+  });
+</script>
