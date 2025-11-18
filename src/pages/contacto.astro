@@ -7,29 +7,21 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="contacto-titulo">Contáctame</h2>
 
       <form
-        class="contacto-formulario"
-        action="https://formsubmit.co/sofiag0029@gmail.com"
-        method="POST"
-        id="formulario-contacto"
-      >
-        <input type="text" name="nombre" placeholder="Nombre" required />
-        <input
-          type="email"
-          name="correo"
-          placeholder="Correo electrónico"
-          required
-        />
-        <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+  class="contacto-formulario"
+  action="https://formsubmit.co/sofiag0029@gmail.com"
+  method="POST"
+  id="formulario-contacto"
+>
+  <input type="text" name="nombre" placeholder="Nombre" required />
+  <input type="email" name="correo" placeholder="Correo electrónico" required />
+  <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
 
-        <input type="hidden" name="_captcha" value="false" />
-        <input
-          type="hidden"
-          name="_subject"
-          value="Nuevo mensaje desde tu portafolio"
-        />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio" />
 
-        <button type="submit">Enviar mensaje</button>
-      </form>
+  <button type="submit">Enviar mensaje</button>
+</form>
+
 
       <div id="mensaje-exito" class="alerta-exito">
         ¡Tu mensaje ha sido enviado correctamente! 💜
@@ -179,4 +171,7 @@ import Layout from "../layouts/Layout.astro";
       }
     }
   </style>
+ <script src="/scripts/contacto.js" defer></script>
+
+
 </Layout>
