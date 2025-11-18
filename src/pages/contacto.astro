@@ -1,18 +1,106 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-
-
 <Layout>
-    <section id="contacto" class="min-h-screen flex flex-col justify-center items-center bg-white px-6">
-      <h2 class="text-4xl font-semibold mb-6 text-gray-800">Contacto</h2>
-      <form class="w-full max-w-md space-y-4">
-        <input type="text" placeholder="Nombre" class="w-full border p-2 rounded-md" required />
-        <input type="email" placeholder="Correo electrónico" class="w-full border p-2 rounded-md" required />
-        <textarea placeholder="Mensaje" class="w-full border p-2 rounded-md" rows="4" required></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">Enviar</button>
+  <section id="contacto" class="contacto-seccion">
+    <div class="contacto-contenedor">
+      <h2 class="contacto-titulo">Contáctame</h2>
+
+      <form class="contacto-formulario">
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <textarea placeholder="Mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
       </form>
-    </section>
- 
-  </main>
-    </Layout>
+    </div>
+  </section>
+
+  <style>
+    
+    /* Fondo suave sin líneas blancas */
+    .contacto-seccion {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem 1.5rem;
+      background: linear-gradient(180deg, #989BBE -10%, #E8DCF4 100%);
+    }
+
+    /* Tarjeta */
+    .contacto-contenedor {
+      background: #F7F2FF; /* más suave y acorde a tus tarjetas */
+      padding: 3rem 2.5rem;
+      border-radius: 1.5rem;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      text-align: center;
+      animation: aparecer .6s ease;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Título */
+    .contacto-titulo {
+      font-family: "Playfair Display", serif;
+      font-size: 2.6rem;
+      margin-bottom: 2rem;
+      color: #4B2E83;
+    }
+
+    /* Formulario */
+    .contacto-formulario {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .contacto-formulario input,
+    .contacto-formulario textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 2px solid #d7cceb;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      background: #fdfbff;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.25s ease;
+    }
+
+    /* Efecto focus */
+    .contacto-formulario input:focus,
+    .contacto-formulario textarea:focus {
+      border-color: #6C4FA3;
+      box-shadow: 0 0 8px rgba(108, 79, 163, 0.4);
+      outline: none;
+      background: #fff;
+    }
+
+    /* Botón */
+    .contacto-formulario button {
+      padding: 1rem;
+      background: #6C4FA3;
+      color: #fff;
+      border: none;
+      border-radius: 0.8rem;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .contacto-formulario button:hover {
+      background: #58407c;
+      transform: translateY(-3px);
+    }
+
+    .contacto-formulario button:active {
+      transform: translateY(0);
+    }
+  </style>
+</Layout>

@@ -1,15 +1,24 @@
+---
+import home from '../../assets/home.png';
+
+---
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
 <nav class="navbar">
   <div class="contenedor-navbar">
-    <h1 class="logo">Sofía</h1>
+
+    <a href="/" class="logo-con-icono">
+      <img src={home.src} alt="inicio" class="icono" />
+      <h1 class="logo">Sofia</h1>
+    </a>
 
     <ol class="menu">
-      <li><a href="/" class="link">Index</a></li>
-      <li><a href="/inicio" class="link">Inicio</a></li>
+      <li><a href="/inicio" class="link">Sobre mi</a></li>
       <li><a href="/habilidades" class="link">Habilidades</a></li>
       <li><a href="/proyectos" class="link">Proyectos</a></li>
       <li><a href="/contacto" class="link">Contacto</a></li>
     </ol>
+
   </div>
 </nav>
 
@@ -19,9 +28,10 @@
     --lavanda-medio: #DBD1E9;
     --lavanda-profundo: #989BBE;
     --lavanda-gris: #CDC6E1;
-    --azul-suave: #AED7ED;
-    --azul-oscuro: #3681AB;
-    --texto-oscuro: #2F2F3A;
+    --lavanda-claro: #8d21f9;
+  --lavanda-medio: #350479;
+
+    --texto-oscuro: #190222;
   }
 
   .navbar {
@@ -48,7 +58,7 @@
   .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--azul-oscuro);
+    color: var(--color-neutral-950);
     letter-spacing: 0.5px;
   }
 
@@ -57,35 +67,52 @@
     gap: 2rem;
     list-style: none;
   }
+  .logo-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+  }
+
+  .icono {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+
+
 
   .link {
-    text-decoration: none;
-    color: var(--texto-oscuro);
-    font-weight: 500;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.3s ease;
-  }
+  text-decoration: none;
+  color: var(--texto-oscuro); /* mantiene buen contraste sobre lavanda */
+  font-weight: 600; /* SemiBold para resaltar */
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif; /* aquí aplicamos Montserrat */
+  position: relative;
+  transition: color 0.3s ease;
+}
 
-  .link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--azul-oscuro);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--lavanda-claro);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
 
-  .link:hover {
-    color: var(--azul-oscuro);
-  }
+.link:hover {
+  color: var(--lavanda-medio);
+}
 
-  .link:hover::after {
-    width: 100%;
-  }
+.link:hover::after {
+  width: 100%;
+}
+
 
   @media (max-width: 768px) {
     .menu {

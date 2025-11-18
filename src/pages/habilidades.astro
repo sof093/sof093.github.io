@@ -4,10 +4,18 @@ import base from '../assets/base.png';
 import poo from '../assets/poo.png';
 import redes from '../assets/redes.png';
 import web from '../assets/web.png';
+import maquetado from '../assets/maquetado.png';
+import github from '../assets/github.png';
+import circuitos from '../assets/circuitos.png';
+import monitor from '../assets/monitor.png';
+
 ---
 
 <Layout>
-
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
   <section class="contenido-principal">
 
     <div class="contenedor-habilidades">
@@ -66,7 +74,7 @@ import web from '../assets/web.png';
         <!-- Diseño y Maquetación -->
 <div class="card">
   <div class="icono-card bg2">
-    <img src={base.src} alt="Diseño y maquetación">
+    <img src={maquetado.src} alt="Diseño y maquetación">
   </div>
   <h3 class="titulo-card">Diseño y maquetación</h3>
   <p class="texto-card">
@@ -77,7 +85,7 @@ import web from '../assets/web.png';
 <!-- Git y GitHub -->
 <div class="card">
   <div class="icono-card bg1">
-    <img src={base.src} alt="Git y GitHub">
+    <img src={github.src} alt="Git y GitHub">
   </div>
   <h3 class="titulo-card">Control de versiones</h3>
   <p class="texto-card">
@@ -88,7 +96,7 @@ import web from '../assets/web.png';
 <!-- Circuitos -->
 <div class="card">
   <div class="icono-card bg1">
-    <img src={base.src} alt="Circuitos eléctricos y electrónicos">
+    <img src={circuitos.src} alt="Circuitos eléctricos y electrónicos">
   </div>
   <h3 class="titulo-card">Circuitos eléctricos y electrónicos</h3>
   <p class="texto-card">
@@ -99,7 +107,7 @@ import web from '../assets/web.png';
 <!-- Arquitectura de computadoras -->
 <div class="card">
   <div class="icono-card bg1">
-    <img src={base.src} alt="Arquitectura de computadoras">
+    <img src={monitor.src} alt="Arquitectura de computadoras">
   </div>
   <h3 class="titulo-card">Arquitectura de computadoras</h3>
   <p class="texto-card">
@@ -123,22 +131,28 @@ import web from '../assets/web.png';
 
 <style>
   /* 🎨 Fondo general como en Sobre mí */
-  .contenido-principal {
-    min-height: 100vh;
-    background: linear-gradient(180deg, #989BBE -10%, #E8DCF4 100%);
-    padding: 6rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-family: 'Poppins', sans-serif;
-  }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #E8DCF4; /* color base, no se verá la línea */
+}
+
+.contenido-principal {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
+}
 
   /* 🧩 Contenedor */
   .contenedor-habilidades {
     background: #DBD1E9;
     padding: 3rem;
-    max-width: 1000px;
-    width: 100%;
+    max-width: 1500px;
+    width: 150%;
     border-radius: 1.5rem;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
@@ -146,18 +160,20 @@ import web from '../assets/web.png';
 
   /* 🔹 Títulos */
   .titulo {
+    font-family: 'Playfair Display', serif;
     color: #000c12;
     font-size: 2.2rem;
     font-weight: 700;
   }
 
   .descripcion {
+    font-family: 'Lora', serif;
     color: #2f2f3d;
-    font-size: 1rem;
-    margin-top: 1rem;
-    max-width: 700px;
+    font-size: 1.6rem;
+   
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
 
   /* 🟪 Grid */
@@ -183,12 +199,17 @@ import web from '../assets/web.png';
   }
 
   .titulo-card {
+    
+    font-family: 'Lora', serif;
+    text-align: center;
     font-size: 1.3rem;
     margin-top: 1rem;
     color: #000c12;
   }
 
   .texto-card {
+    font-family: 'Poppins';
+    text-align: justify;
     margin-top: 0.7rem;
     color: #2f2f3d;
     font-size: 0.95rem;
@@ -210,9 +231,6 @@ import web from '../assets/web.png';
     width: 40px;
   }
 
-  /* Colores iguales a tu otra página */
-  .bg1 { background-color: #989BBE; }
-  .bg2 { background-color: #CDC6E7; }
 
   @media (min-width: 768px) {
     .contenedor-habilidades {

@@ -1,13 +1,182 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import pagos from "../assets/pagos.png"
+import lumina from "../assets/lumina.jpg"
+import mini from "../assets/mini.jpg"
 ---
 
 <Layout>
-    
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+  <section class="contenido-principal">
+<section class="proyectos">
+  <h2 class="titulo-seccion">Mis Proyectos</h2>
 
-    <section id="quien-soy" class="min-h-screen flex flex-col justify-center items-center bg-white px-6">
-      <h2 class="text-4xl font-semibold mb-4 text-gray-800">Proyectos</h2>
-      <p class="max-w-2xl text-center text-gray-600">Soy</p>
-    </section>
-    </Layout>
+  <div class="grid-proyectos">
+    <!-- Proyecto 1 -->
+    <div class="proyecto">
+      <div class="imagen-wrapper">
+      <img src={lumina.src} alt="Aplicación para personas con discapacidad del habla" class="imagen-proyecto" />
+      </div>
+      <h3 class="nombre-proyecto">Aplicación para personas con discapacidad del habla</h3>
+      <p class="descripcion-proyecto">
+        Proyecto orientado a facilitar la comunicación de personas con discapacidad del habla. Incluye interfaz amigable y tecnologías web para mejorar la accesibilidad.
+      </p>
+      <a href="https://github.com/sof093/Aplicacion-para-personas-con-discapacidad-del-habla" target="_blank" class="btn-proyecto">
+        Ver proyecto en GitHub
+      </a>
+    </div>
+
+    <!-- Proyecto 2 -->
+    <div class="proyecto">
+      <div class="imagen-wrapper">
+      <img src={mini.src} alt="MiniJuego en Pygame" class="imagen-proyecto" />
+      </div>
+      <h3 class="nombre-proyecto">Minijuego en Pygame</h3>
+      <p class="descripcion-proyecto">
+        Mini juego desarrollado en Python usando Pygame. Enfocado en la práctica de lógica de programación, animaciones y control de eventos.
+      </p>
+      <a href="https://github.com/sof093/minijuego_pygame" target="_blank" class="btn-proyecto">
+        Ver proyecto en GitHub
+      </a>
+    </div>
+
+    <!-- Proyecto 3 -->
+    <div class="proyecto">
+      <div class="imagen-wrapper">
+      <img src={pagos.src} alt="Prototipo de Transferencias" class="imagen-proyecto" />
+      </div>
+      <h3 class="nombre-proyecto">Prototipo de transferencias con Open Pyments</h3>
+      <p class="descripcion-proyecto">
+        Prototipo de sistema para gestionar transferencias, diseñado con enfoque en UX/UI y procesos de automatización para mejorar la experiencia del usuario.
+      </p>
+      <a href="https://github.com/sof093/Prototipo_tranferencias" target="_blank" class="btn-proyecto">
+        Ver proyecto en GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  </section>
+
+</Layout>
+
+
+<style>
+  /* 🎨 Fondo general como en Sobre mí */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #E8DCF4; /* color base, no se verá la línea */
+}
+
+.contenido-principal {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #989BBE 0%, #E8DCF4 100%);
+}
+.proyectos {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #E8DCF4 0%, #DBD1E9 100%);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.titulo-seccion {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #4B2E83;
+}
+
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.proyecto {
+  background-color: #DBD1E9;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* 🔥 NUEVO */
+  display: flex;
+  flex-direction: column;
+}
+.btn-proyecto {
+  margin-top: auto; /* 🔥 hace que el botón se pegue al fondo */
+}
+
+
+/* CONTENEDOR de la imagen */
+.imagen-wrapper {
+  width: 100%;
+  height: 300px; /* tamaño uniforme para TODAS */
+  border-radius: 0.8rem;
+  overflow: hidden; /* para evitar bordes raros */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e2d8ef; /* color suave para que combine */
+}
+
+/* IMAGEN dentro del contenedor */
+.imagen-proyecto {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* se muestra COMPLETA */
+}
+
+
+
+.proyecto:hover .imagen-proyecto {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+
+.nombre-proyecto {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #2F2F3A;
+}
+
+.descripcion-proyecto {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.btn-proyecto {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #6C4FA3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-proyecto:hover {
+  background-color: #58407c;
+}
+
+
+</style>
   
