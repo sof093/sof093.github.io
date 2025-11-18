@@ -16,8 +16,15 @@ import sun from "../../assets/sun.png";
       <h1 class="logo">Sofia</h1>
     </a>
 
-    <div class="menu-y-toggle">
-      <ol class="menu">
+<div class="menu-y-toggle">
+        
+        <button class="menu-button" aria-expanded="false" aria-controls="main-menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+      <ol class="menu" id="main-menu"> 
         
         <li><a href="/inicio" class="link">Sobre mí</a></li>
         <li><a href="/habilidades" class="link">Habilidades</a></li>
@@ -25,49 +32,33 @@ import sun from "../../assets/sun.png";
         <li><a href="/contacto" class="link">Contacto</a></li>
       </ol>
 
-      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-        <div class="knob">
-          <img id="theme-icon" src={moon.src} alt="tema">
-        </div>
-      </button>
-    </div>
-  </div>
+ <button 
+            id="theme-toggle" 
+            class="theme-toggle" 
+            aria-label="Cambiar tema"
+            data-moon-src={moon.src}
+            data-sun-src={sun.src}
+        >
+ <div class="knob">
+ <img id="theme-icon" src={moon.src} alt="tema">
+ </button>
+ </div>
+ </div>
 </nav>
 
+---
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("theme-toggle");
-    const icon = document.getElementById("theme-icon");
-
-    // Aquí usamos directamente las variables importadas
-    const moonIcon = moon;
-    const sunIcon = sun;
-
-    function applyTheme(dark) {
-      document.documentElement.classList.toggle("dark", dark);
-      icon.src = dark ? sunIcon : moonIcon;
-      localStorage.setItem("theme", dark ? "dark" : "light");
-    }
-
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(saved ? saved === "dark" : prefersDark);
-
-    toggle.addEventListener("click", () => {
-      applyTheme(!document.documentElement.classList.contains("dark"));
-    });
-  });
-</script>
 <style>
-
   :root {
+    /* Variables limpiadas y renombradas para evitar el error de sintaxis */
     --lavanda-claro: #e8dcf4;
     --lavanda-medio: #dbd1e9;
     --lavanda-profundo: #989bbe;
     --lavanda-gris: #cdc6e1;
-    --lavanda-claro: #8d21f9;
-    --lavanda-medio: #350479;
+    --lavanda-fuerte: #8d21f9; /* Color primario usado para efectos */
+    --lavanda-oscuro: #350479; /* Color de hover */
+    --navbar-bg: #e8dcf4;
+    --menu-bg-mobile: var(--navbar-bg);
 
     --texto-oscuro: #480366;
   }
@@ -97,7 +88,6 @@ import sun from "../../assets/sun.png";
     align-items: center;
     gap: 0.4rem;
     text-decoration: none;
-    align-items: left;
   }
 
   .icono {
@@ -116,49 +106,113 @@ import sun from "../../assets/sun.png";
     transition: color 0.3s ease;
   }
 
-  .link::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--lavanda-claro);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
+ .link::after {
+ content: "";
+ position: absolute;
+ bottom: -4px;
+ left: 0;
+ width: 0%;
+ height: 2px;
+ background-color: var(--lavanda-fuerte);
+ transition: width 0.3s ease;
+ border-radius: 2px;
+ }
 
-  .link:hover {
-    color: var(--lavanda-medio);
-  }
+ .link:hover {
+ color: var(--lavanda-oscuro); }
 
-  .link:hover::after {
-    width: 100%;
-  }
+.link:hover::after { width: 100%;
+ }
 
-  @media (max-width: 768px) {
+    /* Estilos del Botón de Hamburguesa */
+    .menu-button {
+        display: none; 
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1000;
+    }
+    .hamburger-line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--texto-oscuro);
+        margin: 4px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+ @media (max-width: 768px) {
+    
+    /* Mostrar hamburguesa y ocultar menú */
+ .menu-button {
+ display: block;  }
+
     .menu {
-      gap: 1.2rem;
+        position: absolute;
+        top: 100%; 
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        background-color: var(--menu-bg-mobile);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%); /* Ocultar el menú */
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
     }
-    .logo {
-      font-size: 1.5rem;
+    
+    .menu.is-open {
+        transform: translateX(0); /* Mostrar el menú */
     }
-  }
+
+    .menu .link {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+    }
+    .menu .link::after {
+        display: none; /* Oculta la línea de hover en móvil */
+    }
+
+    /* Efecto "X" en la hamburguesa */
+    .menu-button[aria-expanded="true"] .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-button[aria-expanded="true"] .hamburger-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-button[aria-expanded="true"] .hamburger-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+ .logo {
+ font-size: 1.5rem;
+}
+ }
 </style>
+
+---
+
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. Lógica de Cambio de Tema (Corregida la carga de iconos) ---
     const toggle = document.getElementById("theme-toggle");
     const icon = document.getElementById("theme-icon");
 
-    // Pasamos las rutas importadas como strings desde Astro
-    const moonIcon = "{moon.src}".replace(/^{|}$/g, '');
-    const sunIcon = "{sun.src}".replace(/^{|}$/g, '');
+    // Obtener las rutas desde los atributos data-*
+    const moonIcon = toggle.getAttribute('data-moon-src');
+    const sunIcon = toggle.getAttribute('data-sun-src');
 
     function applyTheme(dark) {
-      document.documentElement.classList.toggle("dark", dark);
-      toggle.dataset.theme = dark ? "dark" : "light";
-      icon.src = dark ? sunIcon : moonIcon;
-      localStorage.setItem("theme", dark ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", dark);
+        toggle.dataset.theme = dark ? "dark" : "light";
+        icon.src = dark ? sunIcon : moonIcon;
+        localStorage.setItem("theme", dark ? "dark" : "light");
     }
 
     const saved = localStorage.getItem("theme");
@@ -166,8 +220,22 @@ import sun from "../../assets/sun.png";
     applyTheme(saved ? saved === "dark" : prefersDark);
 
     toggle.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.contains("dark");
-      applyTheme(!isDark);
+        const isDark = document.documentElement.classList.contains("dark");
+        applyTheme(!isDark);
     });
-  });
+
+    // --- 2. Lógica de Menú Hamburguesa (Responsivo) ---
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.getElementById('main-menu');
+    
+    if (menuButton && menu) {
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            
+            // Alternar la clase is-open y el atributo aria-expanded
+            menu.classList.toggle('is-open');
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+        });
+    }
+ });
 </script>
