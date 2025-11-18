@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
 <Layout>
   <section class="contenido-principal">
     <div class="contacto-contenedor">
@@ -20,8 +19,7 @@ import Layout from "../layouts/Layout.astro";
           placeholder="Correo electrónico"
           required
         />
-        <textarea name="mensaje" placeholder="Mensaje" rows="4" required
-        ></textarea>
+        <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
 
         <input type="hidden" name="_captcha" value="false" />
         <input
@@ -40,19 +38,29 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <style>
-    body {
+    :global(body) {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: #e8dcf4;
+      transition: background 0.3s ease;
     }
 
-    .contenido-principal {
+    :global(.dark) body {
+      background: #1a1a1a;
+    }
+
+    :global(.contenido-principal) {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 6rem 1.5rem;
       background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
+      transition: background 0.3s ease;
+    }
+
+    :global(.dark) .contenido-principal {
+      background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
     }
 
     .contacto-contenedor {
@@ -64,17 +72,13 @@ import Layout from "../layouts/Layout.astro";
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
       text-align: center;
       animation: aparecer 0.6s ease;
+      transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    @keyframes aparecer {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    :global(.dark) .contacto-contenedor {
+      background: #232323;
+      color: #f2f2f2;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     }
 
     .contacto-titulo {
@@ -82,6 +86,11 @@ import Layout from "../layouts/Layout.astro";
       font-size: 2.6rem;
       margin-bottom: 2rem;
       color: #4b2e83;
+      transition: color 0.3s ease;
+    }
+
+    :global(.dark) .contacto-titulo {
+      color: #d8caff;
     }
 
     .contacto-formulario {
@@ -102,12 +111,16 @@ import Layout from "../layouts/Layout.astro";
       transition: all 0.25s ease;
     }
 
-    .contacto-formulario input:focus,
-    .contacto-formulario textarea:focus {
-      border-color: #6c4fa3;
-      box-shadow: 0 0 8px rgba(108, 79, 163, 0.4);
-      outline: none;
-      background: #fff;
+    :global(.dark) .contacto-formulario input,
+    :global(.dark) .contacto-formulario textarea {
+      background: #2f2f2f;
+      border: 2px solid #4a3a63;
+      color: #f5eaff;
+    }
+
+    :global(.dark) .contacto-formulario input::placeholder,
+    :global(.dark) .contacto-formulario textarea::placeholder {
+      color: #b8a5d6;
     }
 
     .contacto-formulario button {
@@ -118,9 +131,12 @@ import Layout from "../layouts/Layout.astro";
       border-radius: 0.8rem;
       font-size: 1.1rem;
       cursor: pointer;
-      transition:
-        background 0.3s ease,
-        transform 0.2s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    :global(.dark) .contacto-formulario button {
+      background: #9a7fe8;
+      color: #1a1a1a;
     }
 
     .contacto-formulario button:hover {
@@ -128,8 +144,8 @@ import Layout from "../layouts/Layout.astro";
       transform: translateY(-3px);
     }
 
-    .contacto-formulario button:active {
-      transform: translateY(0);
+    :global(.dark) .contacto-formulario button:hover {
+      background: #bba2ff;
     }
 
     .alerta-exito {
@@ -143,61 +159,24 @@ import Layout from "../layouts/Layout.astro";
       font-size: 16px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.4s ease, background 0.3s ease, color 0.3s ease;
       pointer-events: none;
-    }
-
-    :global(.dark) body {
-      background: #1a1a1a;
-    }
-
-    :global(.dark) .contenido-principal {
-      background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
-    }
-
-    :global(.dark) .contacto-contenedor {
-      background: #232323;
-      color: #f2f2f2;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    }
-
-    :global(.dark) .contacto-titulo {
-      color: #d8caff;
-    }
-
-    :global(.dark) .contacto-formulario input,
-    :global(.dark) .contacto-formulario textarea {
-      background: #2f2f2f;
-      border: 2px solid #4a3a63;
-      color: #f5eaff;
-    }
-
-    :global(.dark) .contacto-formulario input::placeholder,
-    :global(.dark) .contacto-formulario textarea::placeholder {
-      color: #b8a5d6;
-    }
-
-    :global(.dark) .contacto-formulario input:focus,
-    :global(.dark) .contacto-formulario textarea:focus {
-      background: #373737;
-      border-color: #9a7fe8;
-      box-shadow: 0 0 8px rgba(154, 127, 232, 0.4);
-    }
-
-    :global(.dark) .contacto-formulario button {
-      background: #9a7fe8;
-      color: #1a1a1a;
-    }
-
-    :global(.dark) .contacto-formulario button:hover {
-      background: #bba2ff;
     }
 
     :global(.dark) .alerta-exito {
       background: #9a7fe8;
       color: #1a1a1a;
     }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </Layout>
-
-<script src="/scripts/contacto.js" client:load></script>
