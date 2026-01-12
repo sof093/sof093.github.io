@@ -1,0 +1,124 @@
+/* Fondo general */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #e8dcf4;
+  transition: background 0.3s ease;
+}
+
+.dark body {
+  background: #1a1a1a;
+}
+
+/* Contenedor principal */
+.contenido-principal {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
+  transition: background 0.3s ease;
+}
+
+.dark .contenido-principal {
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+/* Tarjeta */
+.contacto-contenedor {
+  background: #f7f2ff;
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  animation: aparecer 0.6s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.dark .contacto-contenedor {
+  background: #232323;
+  color: #f2f2f2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* Título */
+.contacto-titulo {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  color: #4b2e83;
+  transition: color 0.3s ease;
+}
+
+.dark .contacto-titulo {
+  color: #d8caff;
+}
+
+/* Input y textarea */
+.contacto-input,
+.contacto-textarea {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
+  border: 2px solid #d7cceb;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  background: #fdfbff;
+  transition: all 0.25s ease;
+}
+
+.dark .contacto-input,
+.dark .contacto-textarea {
+  background: #2f2f2f;
+  border-color: #4a3a63;
+  color: #f5eaff;
+}
+
+.dark .contacto-input::placeholder,
+.dark .contacto-textarea::placeholder {
+  color: #b8a5d6;
+}
+
+/* Botón */
+.contacto-boton {
+  width: 90%;
+  margin: 1rem auto 0;
+  padding: 1rem;
+  background: #6c4fa3;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contacto-boton:hover {
+  background: #58407c;
+  transform: translateY(-3px);
+}
+
+.dark .contacto-boton {
+  background: #9a7fe8;
+  color: #1a1a1a;
+}
+
+.dark .contacto-boton:hover {
+  background: #bba2ff;
+}
+
+/* Keyframes */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

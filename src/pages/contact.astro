@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/molecules/ContactForm.jsx";
+---
+
+<Layout>
+  <section style="padding: 2rem;">
+    <h1>Contacto</h1>
+    <ContactForm client:load />
+  </section>
+</Layout>
