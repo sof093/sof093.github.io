@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import robot from "../../assets/robot.jpeg";
+---
+
+<Layout>
+  <section class="post">
+    <h1>Participación en competencias de robótica</h1>
+    <span class="fecha">12 de Noviembre de 2025</span>
+
+    <img src={robot.src} alt="Competencias de robótica" />
+
+    <p>
+      Se participó en un torneo académico de robótica donde los estudiantes
+      pusieron en práctica conocimientos de programación, electrónica y trabajo en equipo.
+    </p>
+
+    <p>
+      Esta experiencia fortaleció habilidades técnicas y fomentó el pensamiento lógico
+      y la resolución de problemas.
+    </p>
+
+    <a href="/blog" class="volver">← Volver al blog</a>
+  </section>
+</Layout>
+
+<style>
+.post { max-width: 800px; margin: 6rem auto; padding: 2rem; }
+.post img { width: 100%; border-radius: 1rem; margin: 2rem 0; }
+.fecha { color: #666; font-size: 0.9rem; }
+.volver { color: #6c4fa3; text-decoration: none; font-weight: 500; }
+</style>

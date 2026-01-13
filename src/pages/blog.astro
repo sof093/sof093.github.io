@@ -1,97 +1,98 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import pagos from "../assets/pagos.png";
-import lumina from "../assets/lumina.jpg";
-import mini from "../assets/mini.jpg";
+import alfabetizacion from "../assets/alfabetizacion.jpeg"
+import robot from "../assets/robot.jpeg"
+import Hacthon from "../assets/Hacthon.jpeg"
+import manualidades from "../assets/manualidades.jpeg"
+import conferencias from "../assets/conferencias.jpeg"
+import desfile from "../assets/desfile.jpeg"
+
 ---
 
 <Layout>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
     rel="stylesheet"
   />
 
   <section class="contenido-principal">
-    <section class="proyectos">
-      <h2 class="titulo-seccion">Mi blog</h2>
+    <section class="blog">
+      <h2 class="titulo-seccion">Mi Blog</h2>
 
-      <div class="grid-proyectos">
-        <div class="proyecto">
-          <div class="imagen-wrapper">
-            <img
-              src={lumina.src}
-              alt="Aplicación para personas con discapacidad del habla"
-              class="imagen-proyecto"
-            />
-          </div>
-          <h3 class="nombre-proyecto">
-            Aplicación para personas con discapacidad del habla
-          </h3>
-          <p class="descripcion-proyecto">
-            Proyecto orientado a facilitar la comunicación de personas con
-            discapacidad del habla. Incluye interfaz amigable y tecnologías web
-            para mejorar la accesibilidad.
+      <div class="grid-blog">
+        <!-- Entrada 1 -->
+        <article class="entrada">
+          <img src={alfabetizacion.src} alt="Entrada de blog" class="img-blog" />
+          <h3 class="titulo-entrada">Alfabetizacion</h3>
+          <span class="fecha">16 de Noviembre de 2025</span>
+          <p class="resumen">
+            Durante el proceso de el servicio social se llevo a cabo la alfabetizacion por parte de los alumnos
           </p>
-          <a
-            href="https://github.com/sof093/Aplicacion-para-personas-con-discapacidad-del-habla"
-            target="_blank"
-            class="btn-proyecto"
-          >
-            Ver proyecto en GitHub
-          </a>
-        </div>
+          <a href="/blog/alfabetizacion" class="btn-entrada">Leer más</a>
+        </article>
 
-        <div class="proyecto">
-          <div class="imagen-wrapper">
-            <img
-              src={mini.src}
-              alt="MiniJuego en Pygame"
-              class="imagen-proyecto"
-            />
-          </div>
-          <h3 class="nombre-proyecto">Minijuego en Pygame</h3>
-          <p class="descripcion-proyecto">
-            Mini juego desarrollado en Python usando Pygame. Enfocado en la
-            práctica de lógica de programación, animaciones y control de
-            eventos.
+        <!-- Entrada 2 -->
+        <article class="entrada">
+          <img src={robot.src} alt="Entrada de blog" class="img-blog" />
+          <h3 class="titulo-entrada">Participacion en competencias de robots</h3>
+          <span class="fecha">12 de Noviembre de 2025</span>
+          <p class="resumen">
+            Torneo de robots en la carrera de Ingenieria en sistemas computacionales
           </p>
-          <a
-            href="https://github.com/sof093/minijuego_pygame"
-            target="_blank"
-            class="btn-proyecto"
-          >
-            Ver proyecto en GitHub
-          </a>
-        </div>
+          <a href="/blog/robotica" class="btn-entrada">Leer más</a>
 
-        <div class="proyecto">
-          <div class="imagen-wrapper">
-            <img
-              src={pagos.src}
-              alt="Prototipo de Transferencias"
-              class="imagen-proyecto"
-            />
-          </div>
-          <h3 class="nombre-proyecto">
-            Prototipo de transferencias con Open Pyments
-          </h3>
-          <p class="descripcion-proyecto">
-            Prototipo de sistema para gestionar transferencias, diseñado con
-            enfoque en UX/UI y procesos de automatización para mejorar la
-            experiencia del usuario.
+        </article>
+
+        <!-- Entrada 3 -->
+        <article class="entrada">
+          <img src={desfile.src} alt="Entrada de blog" class="img-blog" />
+          <h3 class="titulo-entrada">Desfiles academicos </h3>
+          <span class="fecha">25 de Noviembre de 2025</span>
+          <p class="resumen">
+            Desfiles en el municipio de san jose del Rincon
           </p>
-          <a
-            href="https://github.com/sof093/Prototipo_tranferencias"
-            target="_blank"
-            class="btn-proyecto"
-          >
-            Ver proyecto en GitHub
-          </a>
-        </div>
+          <a href="/blog/desfiles" class="btn-entrada">Leer más</a>
+        </article>
+
+        <!-- Entrada 4 -->
+        <article class="entrada">
+          <img src={conferencias.src} alt="Entrada de blog" class="img-blog" />
+          <h3 class="titulo-entrada">Asistencia a conferencias</h3>
+          <span class="fecha">3 de Diciembre de 2025</span>
+          <p class="resumen">
+            Participacion de ponentes expertos en areas de la tecnologia.
+          </p>
+          <a href="/blog/conferencias" class="btn-entrada">Leer más</a>
+
+
+        </article>
+
+        <!-- Entrada 5 -->
+        <article class="entrada">
+          <img src={manualidades.src} alt="Entrada de blog" class="img-blog" />
+          <h3 class="titulo-entrada">Actividades extraescolares de manualidades</h3>
+          <span class="fecha">6 de diciembre de 2025</span>
+          <p class="resumen">
+            Creacion de manualidades recreativas.
+          </p>
+          <a href="/blog/manualidades" class="btn-entrada">Leer más</a>
+        </article>
+
+        <!-- Entrada 6 -->
+        <article class="entrada">
+          <img src={Hacthon.src} alt="Entrada de blog" class="img-blog" />
+          <h3 class="titulo-entrada">Participacion cultural</h3>
+          <span class="fecha">8 de Diciembre de 2025</span>
+          <p class="resumen">
+            Aprendizajes técnicos y personales durante la carrera.
+          </p>
+          <a href="/blog/hackathon" class="btn-entrada">Leer más</a>
+        </article>
       </div>
     </section>
   </section>
 </Layout>
+
 
 <style>
   body {
@@ -228,4 +229,72 @@ import mini from "../assets/mini.jpg";
   :global(.dark) .btn-proyecto:hover {
     background-color: #6b55b8;
   }
+  .blog {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.grid-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.entrada {
+  background: #dbd1e9;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.dark) .entrada {
+  background: #2a2740;
+}
+
+.img-blog {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.titulo-entrada {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  margin: 1rem;
+  color: #4b2e83;
+}
+
+:global(.dark) .titulo-entrada {
+  color: #d8c8ff;
+}
+
+.fecha {
+  font-size: 0.85rem;
+  margin: 0 1rem;
+  color: #666;
+}
+
+.resumen {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 1rem;
+}
+
+.btn-entrada {
+  margin: 1rem;
+  margin-top: auto;
+  background: #6c4fa3;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.btn-entrada:hover {
+  background: #58407c;
+}
+
 </style>
