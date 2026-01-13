@@ -6,6 +6,7 @@ import Hacthon from "../assets/Hacthon.jpeg"
 import manualidades from "../assets/manualidades.jpeg"
 import conferencias from "../assets/conferencias.jpeg"
 import desfile from "../assets/desfile.jpeg"
+
 ---
 
 <Layout>
@@ -14,7 +15,7 @@ import desfile from "../assets/desfile.jpeg"
     rel="stylesheet"
   />
 
-  <section class="contenido-principal">
+   <section class="contenido-principal">
     <section class="blog">
       <h2 class="titulo-seccion">Mi Blog</h2>
 
@@ -88,3 +89,209 @@ import desfile from "../assets/desfile.jpeg"
     </section>
   </section>
 </Layout>
+
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #e8dcf4;
+  }
+
+  :global(.dark) body {
+    background: #1a1a1a !important;
+  }
+
+  .contenido-principal {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #989bbe 0%, #e8dcf4 100%);
+  }
+
+  :global(.dark) .contenido-principal {
+    background: linear-gradient(180deg, #1f1f2e 0%, #262637 100%);
+  }
+
+  .proyectos {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, #e8dcf4 0%, #dbd1e9 100%);
+  }
+
+  :global(.dark) .proyectos {
+    background: linear-gradient(180deg, #232233 0%, #2e2d44 100%);
+  }
+
+  .titulo-seccion {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #4b2e83;
+  }
+
+  :global(.dark) .titulo-seccion {
+    color: #d8c8ff;
+  }
+
+  .grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .proyecto {
+    background-color: #dbd1e9;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  :global(.dark) .proyecto {
+    background-color: #2a2740;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.06);
+  }
+
+  .imagen-wrapper {
+    width: 100%;
+    height: 300px;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e2d8ef;
+  }
+
+  :global(.dark) .imagen-wrapper {
+    background: #3b3657;
+  }
+
+  .imagen-proyecto {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .nombre-proyecto {
+    font-family: "Lora", serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #2f2f3a;
+  }
+
+  :global(.dark) .nombre-proyecto {
+    color: #e6e2ff;
+  }
+
+  .descripcion-proyecto {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+
+  :global(.dark) .descripcion-proyecto {
+    color: #d6d6d6;
+  }
+
+  .btn-proyecto {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background-color: #6c4fa3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin-top: auto;
+  }
+
+  .btn-proyecto:hover {
+    background-color: #58407c;
+  }
+
+  :global(.dark) .btn-proyecto {
+    background-color: #8b6fde;
+  }
+
+  :global(.dark) .btn-proyecto:hover {
+    background-color: #6b55b8;
+  }
+  .blog {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.grid-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.entrada {
+  background: #dbd1e9;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.dark) .entrada {
+  background: #2a2740;
+}
+
+.img-blog {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.titulo-entrada {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  margin: 1rem;
+  color: #4b2e83;
+}
+
+:global(.dark) .titulo-entrada {
+  color: #d8c8ff;
+}
+
+.fecha {
+  font-size: 0.85rem;
+  margin: 0 1rem;
+  color: #666;
+}
+
+.resumen {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 1rem;
+}
+
+.btn-entrada {
+  margin: 1rem;
+  margin-top: auto;
+  background: #6c4fa3;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.btn-entrada:hover {
+  background: #58407c;
+}
+
+</style>
