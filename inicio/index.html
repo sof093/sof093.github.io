@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sofía | Portafolio</title><link rel="stylesheet" href="/_astro/blog.C6yml4uK.css">
+<style>.contenido-principal[data-astro-cid-h5265e4s]{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:6rem 1.5rem;background:linear-gradient(180deg,#989bbe,#e8dcf4)}.dark .contenido-principal[data-astro-cid-h5265e4s]{background:linear-gradient(180deg,#1f1f2e,#262637)}.tarjeta-sobre-mi[data-astro-cid-h5265e4s]{display:flex;flex-direction:column;gap:2rem;background-color:#dbd1e9;color:#1f1f1f;border-radius:1.5rem;box-shadow:0 15px 30px #00000026;padding:3rem;max-width:1000px;width:100%}.dark .tarjeta-sobre-mi[data-astro-cid-h5265e4s]{background-color:#2a2740;color:#f0ebff}.contenedor-imagen[data-astro-cid-h5265e4s]{position:relative}.fondo-imagen[data-astro-cid-h5265e4s]{position:absolute;width:220px;height:220px;background-color:#989bbe;border-radius:1.2rem;transform:rotate(-5deg);z-index:0}.dark .fondo-imagen[data-astro-cid-h5265e4s]{background-color:#4b4568}.imagen-perfil[data-astro-cid-h5265e4s]{position:relative;width:200px;height:200px;border-radius:1.2rem;object-fit:cover;border:5px solid #cdc6e7;z-index:1}.dark .imagen-perfil[data-astro-cid-h5265e4s]{border-color:#6f66a8}.texto-sobre-mi[data-astro-cid-h5265e4s]{max-width:600px}.titulo[data-astro-cid-h5265e4s]{font-family:Playfair Display,serif;color:#000c12;font-size:2.2rem;font-weight:700}.dark .titulo[data-astro-cid-h5265e4s]{color:#f4f0ff}.descripcion[data-astro-cid-h5265e4s]{font-size:1.2rem;color:#2f2f3d;text-align:justify}.dark .descripcion[data-astro-cid-h5265e4s]{color:#dcd7f9}.linea-divisoria[data-astro-cid-h5265e4s]{border-top:1px solid rgba(0,0,0,.2);margin:1.5rem 0}.dark .linea-divisoria[data-astro-cid-h5265e4s]{border-top:1px solid rgba(200,200,255,.2)}.datos-personales[data-astro-cid-h5265e4s]{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.dato[data-astro-cid-h5265e4s]{background-color:#dbd1e9;padding:.8rem 1rem;border-radius:.8rem;display:flex;gap:.5rem;align-items:center}.dark .dato[data-astro-cid-h5265e4s]{background-color:#3b3657}.icono[data-astro-cid-h5265e4s]{color:#3681ab}.dark .icono[data-astro-cid-h5265e4s]{color:#a8caff}@media(min-width:768px){.tarjeta-sobre-mi[data-astro-cid-h5265e4s]{flex-direction:row;justify-content:space-between;align-items:center}}
+</style></head> <body> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"><nav class="navbar" data-astro-cid-zl3szved> <div class="contenedor-navbar" data-astro-cid-zl3szved> <a href="/" class="logo-con-icono" data-astro-cid-zl3szved> <img src="/_astro/home.Qi3V9Wji.png" alt="inicio" class="icono" data-astro-cid-zl3szved> <h1 class="logo" data-astro-cid-zl3szved>Sofia</h1> </a> <div class="menu-y-toggle" data-astro-cid-zl3szved> <button class="menu-button" aria-expanded="false" aria-controls="main-menu" data-astro-cid-zl3szved> <span class="hamburger-line" data-astro-cid-zl3szved></span> <span class="hamburger-line" data-astro-cid-zl3szved></span> <span class="hamburger-line" data-astro-cid-zl3szved></span> </button> <ol class="menu" id="main-menu" data-astro-cid-zl3szved> <li data-astro-cid-zl3szved><a href="/inicio" class="link" data-astro-cid-zl3szved>Sobre mí</a></li> <li data-astro-cid-zl3szved><a href="/habilidades" class="link" data-astro-cid-zl3szved>Habilidades</a></li> <li data-astro-cid-zl3szved><a href="/proyectos" class="link" data-astro-cid-zl3szved>Proyectos</a></li> <li data-astro-cid-zl3szved><a href="/blog" class="link" data-astro-cid-zl3szved>Blog</a></li> <li data-astro-cid-zl3szved><a href="/contact" class="link" data-astro-cid-zl3szved>Contacto</a></li> </ol> <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" data-moon-src="/_astro/moon.BTjxq2En.png" data-sun-src="/_astro/sun.B5Eg7yT9.png" data-astro-cid-zl3szved> <div class="knob" data-astro-cid-zl3szved> <img id="theme-icon" src="/_astro/moon.BTjxq2En.png" alt="tema" data-astro-cid-zl3szved> </div></button> </div> </div> </nav>
+---
+
+---
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. Lógica de Cambio de Tema (Corregida la carga de iconos) ---
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    // Obtener las rutas desde los atributos data-*
+    const moonIcon = toggle.getAttribute('data-moon-src');
+    const sunIcon = toggle.getAttribute('data-sun-src');
+
+    function applyTheme(dark) {
+        document.documentElement.classList.toggle("dark", dark);
+        toggle.dataset.theme = dark ? "dark" : "light";
+        icon.src = dark ? sunIcon : moonIcon;
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    }
+
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(saved ? saved === "dark" : prefersDark);
+
+    toggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        applyTheme(!isDark);
+    });
+
+    // --- 2. Lógica de Menú Hamburguesa (Responsivo) ---
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.getElementById('main-menu');
+    
+    if (menuButton && menu) {
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            
+            // Alternar la clase is-open y el atributo aria-expanded
+            menu.classList.toggle('is-open');
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+        });
+    }
+ });
+</script> <main class="min-h-screen pt-20">  <section class="contenido-principal" data-astro-cid-h5265e4s> <div class="tarjeta-sobre-mi" data-astro-cid-h5265e4s> <div class="contenedor-imagen" data-astro-cid-h5265e4s> <div class="fondo-imagen" data-astro-cid-h5265e4s></div> <img src="/_astro/so.D0NVUuV1.jpg" alt="Foto de Sofía García Cruz" class="imagen-perfil" data-astro-cid-h5265e4s> </div> <div class="texto-sobre-mi" data-astro-cid-h5265e4s> <h1 class="titulo" data-astro-cid-h5265e4s>Hola, soy Sofia Garcia Cruz</h1> <p class="descripcion" data-astro-cid-h5265e4s>
+Soy estudiante de Ingeniería en Sistemas Computacionales en la
+          Universidad Mexiquense del Bicentenario, actualmente curso el séptimo
+          semestre. Apasionada por la programación y la resolución de problemas,
+          disfruto aprender nuevas tecnologías y explorar áreas como
+          automatización y desarrollo web. Durante mi formación, he adquirido
+          habilidades y busco siempre aplicar mis conocimientos en estos
+          proyectos.
+</p> <div class="linea-divisoria" data-astro-cid-h5265e4s></div> <div class="datos-personales" data-astro-cid-h5265e4s> <div class="dato" data-astro-cid-h5265e4s> <span class="material-icons-outlined icono" data-astro-cid-h5265e4s>school</span> Ing. en Sistemas
+            Computacionales
+</div> <div class="dato" data-astro-cid-h5265e4s> <span class="material-icons-outlined icono" data-astro-cid-h5265e4s>place</span> Estado de México,
+            MX
+</div> <div class="dato" data-astro-cid-h5265e4s> <span class="material-icons-outlined icono" data-astro-cid-h5265e4s>language</span> Español
+</div> <div class="dato" data-astro-cid-h5265e4s> <span class="material-icons-outlined icono" data-astro-cid-h5265e4s>code</span> Desarrollo Web
+</div> </div> </div> </div> </section>  </main> <footer class="footer" data-astro-cid-zk2wuocr> <div class="contenido" data-astro-cid-zk2wuocr> <p data-astro-cid-zk2wuocr>&copy; 2025 Sofia Garcia Cruz | Todos los derechos reservados</p> <div class="links" data-astro-cid-zk2wuocr> <a href="https://github.com/sof093" target="_blank" class="item" data-astro-cid-zk2wuocr> <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 24 24" data-astro-cid-zk2wuocr> <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.45 7.9 11 .58.1.8-.25.8-.55v-2c-3.2.7-3.9-1.55-3.9-1.55-.5-1.25-1.2-1.6-1.2-1.6-1-.7.08-.7.08-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.8-.55 1.7-.55.5 0 1 .08 1.5.25v-2c0-.3.22-.65.8-.55 4.6-1.55 7.9-5.9 7.9-11C23.5 5.65 18.35.5 12 .5z" data-astro-cid-zk2wuocr></path> </svg>
+GitHub
+</a> <a href="mailto:sofiag0029@gmail.com" class="item" data-astro-cid-zk2wuocr> <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 24 24" data-astro-cid-zk2wuocr> <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 
+            0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 4v10h16V8l-8 
+            5-8-5zm16-2H4l8 5 8-5z" data-astro-cid-zk2wuocr></path> </svg>
+Correo
+</a> <a href="https://wa.me/5217122173892" target="_blank" class="item" data-astro-cid-zk2wuocr> <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 24 24" data-astro-cid-zk2wuocr> <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0a12 
+            12 0 0 0-12 12 11.8 11.8 0 0 0 3.5 8.5L0 24l3.7-3.3A12 
+            12 0 1 0 20.5 3.5zM12 22a10 10 0 0 1-5.4-1.6l-.4-.2-2.3 
+            2 .7-2.4-.3-.4A10 10 0 1 1 12 22zm5.1-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.2c-.2.3-.8 
+            1-.9 1.1s-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9.3 9.3 0 0 1 
+            -1.5-2.4c-.1-.3 0-.4.1-.6s.8-.7 1.1-.9.3-.4.2-.7-.9-1.7-1-2-.5-.5-.7-.5h-.6c-.3 
+            0-.7.1-1 .5s-1.3 1.3-1.3 3.2 1.4 3.7 1.6 4c.2.3 2.7 4.1 
+            6.5 5.5 1 .4 1.8.6 2.4.8h1c.3 0 1-.3 1.2-.8.2-.5 
+            .2-1 .2-1-.1-.3-.3-.5-.7-.7z" data-astro-cid-zk2wuocr></path> </svg>
+WhatsApp
+</a> </div> </div> </footer> </body></html> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> 

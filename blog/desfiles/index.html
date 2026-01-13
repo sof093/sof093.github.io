@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sofía | Portafolio</title><link rel="stylesheet" href="/_astro/blog.C6yml4uK.css">
+<style>.post[data-astro-cid-mc53leko]{max-width:800px;margin:6rem auto;padding:2rem}.post[data-astro-cid-mc53leko] img[data-astro-cid-mc53leko]{width:100%;border-radius:1rem;margin:2rem 0}.fecha[data-astro-cid-mc53leko]{color:#666;font-size:.9rem}.volver[data-astro-cid-mc53leko]{color:#6c4fa3;text-decoration:none;font-weight:500}
+</style></head> <body> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"><nav class="navbar" data-astro-cid-zl3szved> <div class="contenedor-navbar" data-astro-cid-zl3szved> <a href="/" class="logo-con-icono" data-astro-cid-zl3szved> <img src="/_astro/home.Qi3V9Wji.png" alt="inicio" class="icono" data-astro-cid-zl3szved> <h1 class="logo" data-astro-cid-zl3szved>Sofia</h1> </a> <div class="menu-y-toggle" data-astro-cid-zl3szved> <button class="menu-button" aria-expanded="false" aria-controls="main-menu" data-astro-cid-zl3szved> <span class="hamburger-line" data-astro-cid-zl3szved></span> <span class="hamburger-line" data-astro-cid-zl3szved></span> <span class="hamburger-line" data-astro-cid-zl3szved></span> </button> <ol class="menu" id="main-menu" data-astro-cid-zl3szved> <li data-astro-cid-zl3szved><a href="/inicio" class="link" data-astro-cid-zl3szved>Sobre mí</a></li> <li data-astro-cid-zl3szved><a href="/habilidades" class="link" data-astro-cid-zl3szved>Habilidades</a></li> <li data-astro-cid-zl3szved><a href="/proyectos" class="link" data-astro-cid-zl3szved>Proyectos</a></li> <li data-astro-cid-zl3szved><a href="/blog" class="link" data-astro-cid-zl3szved>Blog</a></li> <li data-astro-cid-zl3szved><a href="/contact" class="link" data-astro-cid-zl3szved>Contacto</a></li> </ol> <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" data-moon-src="/_astro/moon.BTjxq2En.png" data-sun-src="/_astro/sun.B5Eg7yT9.png" data-astro-cid-zl3szved> <div class="knob" data-astro-cid-zl3szved> <img id="theme-icon" src="/_astro/moon.BTjxq2En.png" alt="tema" data-astro-cid-zl3szved> </div></button> </div> </div> </nav>
+---
+
+---
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. Lógica de Cambio de Tema (Corregida la carga de iconos) ---
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    // Obtener las rutas desde los atributos data-*
+    const moonIcon = toggle.getAttribute('data-moon-src');
+    const sunIcon = toggle.getAttribute('data-sun-src');
+
+    function applyTheme(dark) {
+        document.documentElement.classList.toggle("dark", dark);
+        toggle.dataset.theme = dark ? "dark" : "light";
+        icon.src = dark ? sunIcon : moonIcon;
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    }
+
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(saved ? saved === "dark" : prefersDark);
+
+    toggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        applyTheme(!isDark);
+    });
+
+    // --- 2. Lógica de Menú Hamburguesa (Responsivo) ---
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.getElementById('main-menu');
+    
+    if (menuButton && menu) {
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            
+            // Alternar la clase is-open y el atributo aria-expanded
+            menu.classList.toggle('is-open');
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+        });
+    }
+ });
+</script> <main class="min-h-screen pt-20">  <section class="post" data-astro-cid-mc53leko> <h1 data-astro-cid-mc53leko>Desfiles académicos</h1> <span class="fecha" data-astro-cid-mc53leko>25 de Noviembre de 2025</span> <img src="/_astro/desfile.oCU8WShM.jpeg" alt="Desfiles académicos" data-astro-cid-mc53leko> <p data-astro-cid-mc53leko>
+Participación en desfiles organizados en el municipio de San José del Rincón,
+      representando a la institución educativa.
+</p> <p data-astro-cid-mc53leko>
+La actividad promovió el sentido de pertenencia, identidad institucional
+      y participación comunitaria.
+</p> <a href="/blog" class="volver" data-astro-cid-mc53leko>← Volver al blog</a> </section>  </main> <footer class="footer" data-astro-cid-zk2wuocr> <div class="contenido" data-astro-cid-zk2wuocr> <p data-astro-cid-zk2wuocr>&copy; 2025 Sofia Garcia Cruz | Todos los derechos reservados</p> <div class="links" data-astro-cid-zk2wuocr> <a href="https://github.com/sof093" target="_blank" class="item" data-astro-cid-zk2wuocr> <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 24 24" data-astro-cid-zk2wuocr> <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.45 7.9 11 .58.1.8-.25.8-.55v-2c-3.2.7-3.9-1.55-3.9-1.55-.5-1.25-1.2-1.6-1.2-1.6-1-.7.08-.7.08-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.8-.55 1.7-.55.5 0 1 .08 1.5.25v-2c0-.3.22-.65.8-.55 4.6-1.55 7.9-5.9 7.9-11C23.5 5.65 18.35.5 12 .5z" data-astro-cid-zk2wuocr></path> </svg>
+GitHub
+</a> <a href="mailto:sofiag0029@gmail.com" class="item" data-astro-cid-zk2wuocr> <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 24 24" data-astro-cid-zk2wuocr> <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 
+            0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 4v10h16V8l-8 
+            5-8-5zm16-2H4l8 5 8-5z" data-astro-cid-zk2wuocr></path> </svg>
+Correo
+</a> <a href="https://wa.me/5217122173892" target="_blank" class="item" data-astro-cid-zk2wuocr> <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 24 24" data-astro-cid-zk2wuocr> <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0a12 
+            12 0 0 0-12 12 11.8 11.8 0 0 0 3.5 8.5L0 24l3.7-3.3A12 
+            12 0 1 0 20.5 3.5zM12 22a10 10 0 0 1-5.4-1.6l-.4-.2-2.3 
+            2 .7-2.4-.3-.4A10 10 0 1 1 12 22zm5.1-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.2c-.2.3-.8 
+            1-.9 1.1s-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9.3 9.3 0 0 1 
+            -1.5-2.4c-.1-.3 0-.4.1-.6s.8-.7 1.1-.9.3-.4.2-.7-.9-1.7-1-2-.5-.5-.7-.5h-.6c-.3 
+            0-.7.1-1 .5s-1.3 1.3-1.3 3.2 1.4 3.7 1.6 4c.2.3 2.7 4.1 
+            6.5 5.5 1 .4 1.8.6 2.4.8h1c.3 0 1-.3 1.2-.8.2-.5 
+            .2-1 .2-1-.1-.3-.3-.5-.7-.7z" data-astro-cid-zk2wuocr></path> </svg>
+WhatsApp
+</a> </div> </div> </footer> </body></html> 
